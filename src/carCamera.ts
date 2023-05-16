@@ -1,15 +1,15 @@
 function solution(S: string): number {
-  let cars: string[] = [];
-  let cameras: string[] = [];
+  let cars: number = 0;
+  let cameras: number = 0;
   let count: number = 0;
   for (let char of S) {
     if (char == '>') {
-      cars.push(char);
+      cars += 1;
     } else if (char == '<') {
-      count += cameras.length;
+      count += cameras;
     } else {
-      count += cars.length;
-      cameras.push('.');
+      count += cars;
+      cameras += 1;
     }
   }
 
